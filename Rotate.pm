@@ -1,11 +1,11 @@
 ###########################################################################
-# $Id: Rotate.pm,v 1.3 2002/05/14 04:49:49 wendigo Exp $
+# $Id: Rotate.pm,v 1.4 2002/05/14 04:58:28 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent::Rotate
 #
-# RCS Revision: $Revision: 1.3 $
-# Date: $Date: 2002/05/14 04:49:49 $
+# RCS Revision: $Revision: 1.4 $
+# Date: $Date: 2002/05/14 04:58:28 $
 #
 # Copyright (c) 2000 Raphael Manfredi.
 # Copyright (c) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
@@ -14,6 +14,9 @@
 # distribution for license information.
 #
 # $Log: Rotate.pm,v $
+# Revision 1.4  2002/05/14 04:58:28  wendigo
+# corrected $VERSION
+#
 # Revision 1.3  2002/05/14 04:49:49  wendigo
 # modified version control
 #
@@ -53,7 +56,7 @@ use Getargs::Long qw(ignorecase);
 
 use vars qw($VERSION);
 
-$VERSION = sprintf "%d.%01d%02d%s", (split /[^0-9p]+/, '$Name:  $')[1..4];
+$VERSION = sprintf "%d.%01d%02d%s", '$Name:  $' =~ /(p?\d+)/g;
 
 BEGIN {
     sub BACKLOG ()     {0}
