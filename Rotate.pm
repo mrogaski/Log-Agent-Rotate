@@ -1,11 +1,11 @@
 ###########################################################################
-# $Id: Rotate.pm,v 1.4 2002/05/14 04:58:28 wendigo Exp $
+# $Id: Rotate.pm,v 1.5 2002/05/14 05:15:30 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent::Rotate
 #
-# RCS Revision: $Revision: 1.4 $
-# Date: $Date: 2002/05/14 04:58:28 $
+# RCS Revision: $Revision: 1.5 $
+# Date: $Date: 2002/05/14 05:15:30 $
 #
 # Copyright (c) 2000 Raphael Manfredi.
 # Copyright (c) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
@@ -14,6 +14,9 @@
 # distribution for license information.
 #
 # $Log: Rotate.pm,v $
+# Revision 1.5  2002/05/14 05:15:30  wendigo
+# updated POD
+#
 # Revision 1.4  2002/05/14 04:58:28  wendigo
 # corrected $VERSION
 #
@@ -329,6 +332,8 @@ would get the configured I<max_write> threshold.
 
 Originally written by Raphael Manfredi E<lt>Raphael_Manfredi@pobox.comE<gt>,
 currently maintained by Mark Rogaski E<lt>mrogaski@cpan.orgE<gt>.
+
+Thanks to Chris Meshkin for his suggestions on file permissions.
 
 =head1 SEE ALSO
 
