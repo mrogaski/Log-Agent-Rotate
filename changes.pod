@@ -1,0 +1,68 @@
+=pod
+
+=head1 Change Log
+
+=over 4
+
+=item B<Version 0.104> (2002-05-14)
+
+=over 4
+
+=item Development and maintenance handed over to Mark Rogaski <mrogaski@cpan.org>.
+
+=item Allow restriction of file permissions with -file_perm argument to Log::Agent::Rotate->make().
+
+=back
+
+=item B<Version 0.103> (2001-04-11)
+
+=over 4
+
+=item Mark rotation in the logfile before rotating it, so that any pending "tail -f" gets to know about it.  Added a regression test for it.
+
+=item Now depends on Getargs::Long for argument parsing.
+
+=back
+
+=item B<Version 0.102> (2000-11-12)
+
+=over 4
+
+=item Untaint data read or rename() complains under -T.
+
+=item Changed pre-req on Log::Agent: must now use 0.2.1.
+
+=item Changed DLSI description to match CPAN's.
+
+=item New -single_host parameter is used to optimize LockFile::Simple:.  We don't supply -nfs when -single_host is true, for faster locking procedure.
+
+=back
+
+=item B<Version 0.101> (2000-11-6)
+
+=over 4
+
+=item Moved to an array representation for the config object.
+
+=item Removed reference to driver and the ability to specify -max_time in other units than seconds (e.g. "2d").
+
+=item Added is_same() to compare rotation policies.
+
+=item Added build_pm_hash() to compute PM value from MANIFEST.
+
+=item Updated t/badconf.t to new detection logic within Log::Agent.
+
+=back
+
+=item B<Version 0.100> (2000-05-05)
+
+=over 4
+
+=item Initial revision.
+
+=back
+
+=back
+
+=cut
+
