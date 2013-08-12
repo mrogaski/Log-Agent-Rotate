@@ -1,25 +1,18 @@
 #!perl
 ###########################################################################
-# $Id: perm.t,v 1.1 2002/05/14 04:46:34 wendigo Exp $
-###########################################################################
 #
-# perm.t
+# t/perm.t
 #
-# RCS Revision: $Revision: 1.1 $
-# Date: $Date: 2002/05/14 04:46:34 $
-#
-# Copyright (c) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+# Copyright (c) 2000 Raphael Manfredi.
+# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# all rights reserved.
 #
 # See the README file included with the
 # distribution for license information.
 #
-# $Log: perm.t,v $
-# Revision 1.1  2002/05/14 04:46:34  wendigo
-# Initial revision
-#
-#
 ###########################################################################
-use Test;
+
+use Test::More;
 
 BEGIN { plan tests => 4 }
 
@@ -45,58 +38,64 @@ sub perm_ok ($$) {
     return $mode == $target;
 }
 
+SKIP: {
 
-my $rotate = Log::Agent::Rotate->make(
-    -backlog     => 2,
-    -unzipped    => 2,
-    -is_alone    => 1,
-    -single_host => 1,
-    -max_size    => 100,
-    -file_perm   => 0600
-);
+    skip "file mode not supported on Win32.", 4 if $^O eq 'MSWin32';
 
-my $driver = Log::Agent::Driver::File->make(
-    -rotate   => $rotate,
-    -channels => {
-        'error'  => 't/logfile',
-        'output' => 't/logfile',
-    },
-);
+    my $rotate = Log::Agent::Rotate->make(
+        -backlog     => 2,
+        -unzipped    => 2,
+        -is_alone    => 1,
+        -single_host => 1,
+        -max_size    => 100,
+        -file_perm   => 0600
+    );
 
-my $msg = '!' x 55;
+    my $driver = Log::Agent::Driver::File->make(
+        -rotate   => $rotate,
+        -channels => {
+            'error'  => 't/logfile',
+            'output' => 't/logfile',
+        },
+    );
 
-logconfig(-driver => $driver);
-clear_log;
+    my $msg = '!' x 55;
 
-logsay $msg;
-ok(perm_ok("t/logfile", 0600));
-logsay $msg;
-ok(perm_ok("t/logfile.0", 0600));
+    logconfig(-driver => $driver);
+    clear_log;
 
-$rotate = Log::Agent::Rotate->make(
-    -backlog     => 2,
-    -unzipped    => 2,
-    -is_alone    => 1,
-    -single_host => 1,
-    -max_size    => 100,
-    -file_perm   => 0644
-);
+    logsay $msg;
+    ok(perm_ok("t/logfile", 0600));
+    logsay $msg;
+    ok(perm_ok("t/logfile.0", 0600));
 
-$driver = Log::Agent::Driver::File->make(
-    -rotate   => $rotate,
-    -channels => {
-        'error'  => 't/logfile',
-        'output' => 't/logfile',
-    },
-);
+    $rotate = Log::Agent::Rotate->make(
+        -backlog     => 2,
+        -unzipped    => 2,
+        -is_alone    => 1,
+        -single_host => 1,
+        -max_size    => 100,
+        -file_perm   => 0644
+    );
 
-logconfig(-driver => $driver);
-clear_log;
+    $driver = Log::Agent::Driver::File->make(
+        -rotate   => $rotate,
+        -channels => {
+            'error'  => 't/logfile',
+            'output' => 't/logfile',
+        },
+    );
 
-logsay $msg;
-ok(perm_ok("t/logfile", 0644));
-logsay $msg;
-ok(perm_ok("t/logfile.0", 0644));
+    logconfig(-driver => $driver);
+    clear_log;
 
-clear_log;
+    logsay $msg;
+    ok(perm_ok("t/logfile", 0644));
+    logsay $msg;
+    ok(perm_ok("t/logfile.0", 0644));
+
+    clear_log;
+
+}
+
  
