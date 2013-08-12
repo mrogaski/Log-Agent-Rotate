@@ -19,6 +19,7 @@ WriteMakefile(
     'VERSION_FROM' => 'Rotate.pm', # finds $VERSION
 	'BUILD_REQUIRES' => {
         'Test::More'        => '0',
+        'File::Copy'        => '0',
 		'Compress::Zlib'    => '0.4',
 		'Getargs::Long'     => '0.103',
 		'LockFile::Simple'  => '0.202',

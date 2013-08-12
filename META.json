@@ -19,7 +19,8 @@
             "Getargs::Long" : "0.103",
             "LockFile::Simple" : "0.202",
             "Log::Agent" : "0.201",
-            "Test::More" : "0"
+            "Test::More" : "0",
+            "File::Copy" : "0",
          }
       },
       "runtime" : {
