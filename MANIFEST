@@ -1,6 +1,7 @@
 README                           The main README file
 MANIFEST                         This list
-ChangeLog                        List of changes
+META.json                        Module meta-data
+changes.pod                      List of changes
 File/Rotate.pm                   A logfile capable of rotating itself
 Makefile.PL                      Generic Makefile template
 Rotate.pm                        File rotation parameters
