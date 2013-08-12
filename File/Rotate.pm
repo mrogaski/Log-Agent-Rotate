@@ -1,37 +1,13 @@
 ###########################################################################
-# $Id: Rotate.pm,v 1.2 2002/05/14 04:47:50 wendigo Exp $
-###########################################################################
 #
-# Log::Agent::File::Rotate
-#
-# RCS Revision: $Revision: 1.2 $
-# Date: $Date: 2002/05/14 04:47:50 $
+# File/Rotate.pm
 #
 # Copyright (c) 2000 Raphael Manfredi.
-# Copyright (c) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# all rights reserved.
 #
 # See the README file included with the
 # distribution for license information.
-#
-# $Log: Rotate.pm,v $
-# Revision 1.2  2002/05/14 04:47:50  wendigo
-# added support for file_perm
-#
-# Revision 1.1  2002/05/12 17:33:43  wendigo
-# Initial revision
-#
-# Revision 0.1.1.3  2001/04/11 15:58:34  ram
-# patch3: mark rotation in the logfile before rotating it
-#
-# Revision 0.1.1.2  2000/11/12 14:53:27  ram
-# patch2: untaint data read or rename() complains under -T
-# patch2: use new -single_host parameter to configure LockFile::Simple
-#
-# Revision 0.1.1.1  2000/11/06 19:57:24  ram
-# patch1: removed reference on driver
-#
-# Revision 0.1  2000/03/05 22:15:40  ram
-# Baseline for first alpha release.
 #
 ###########################################################################
 
