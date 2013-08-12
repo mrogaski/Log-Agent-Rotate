@@ -4,6 +4,17 @@
 
 =over 4
 
+=item B<Version 1.000> (2013-08-12)
+
+Switched to standard X.YYYZZZ versioning.  Usage with preveious versions will
+work as expected, but the documentation will be much clearer.
+
+Fixed several tests for Win32 platforms.
+
+Added BUILD_REQUIRES dependencies.
+
+Replace META.yml with META.json.
+
 =item B<Version 0.104> (2002-05-14)
 
 Development and maintenance handed over to Mark Rogaski <mrogaski@cpan.org>.

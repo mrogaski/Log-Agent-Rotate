@@ -1,6 +1,6 @@
 ###########################################################################
 #
-# Log::Agent::Rotate
+# Rotate.pm
 #
 # Copyright (c) 2000 Raphael Manfredi.
 # Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
@@ -22,9 +22,8 @@ use Getargs::Long qw(ignorecase);
 # File rotating policy
 #
 
-use vars qw($VERSION);
-
-$VERSION = sprintf "%d.%01d%02d%s", '$Name:  $' =~ /(p?\d+)/g;
+our $VERSION = "1.000";
+$VERSION = eval $VERSION;
 
 BEGIN {
     sub BACKLOG ()     {0}
