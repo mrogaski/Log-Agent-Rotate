@@ -33,7 +33,7 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.105",
+   "version" : "1.000",
    "x_installdirs" : "site",
    "x_version_from" : "Rotate.pm"
 }
