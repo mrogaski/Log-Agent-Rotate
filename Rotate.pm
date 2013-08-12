@@ -1,48 +1,13 @@
 ###########################################################################
-# $Id: Rotate.pm,v 1.5 2002/05/14 05:15:30 wendigo Exp $
-###########################################################################
 #
-# Log::Agent::Rotate
-#
-# RCS Revision: $Revision: 1.5 $
-# Date: $Date: 2002/05/14 05:15:30 $
+# Rotate.pm
 #
 # Copyright (c) 2000 Raphael Manfredi.
-# Copyright (c) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# all rights reserved.
 #
 # See the README file included with the
 # distribution for license information.
-#
-# $Log: Rotate.pm,v $
-# Revision 1.5  2002/05/14 05:15:30  wendigo
-# updated POD
-#
-# Revision 1.4  2002/05/14 04:58:28  wendigo
-# corrected $VERSION
-#
-# Revision 1.3  2002/05/14 04:49:49  wendigo
-# modified version control
-#
-# Revision 1.2  2002/05/14 04:47:21  wendigo
-# added file_perm argument
-#
-# Revision 1.1  2002/05/12 17:33:43  wendigo
-# Initial revision
-#
-# Revision 0.1.1.3  2001/04/11 16:00:29  ram
-# patch3: switched to Getargs::Long for argument parsing
-# patch3: updated version number
-#
-# Revision 0.1.1.2  2000/11/12 14:54:10  ram
-# patch2: new -single_host parameter
-#
-# Revision 0.1.1.1  2000/11/06 20:03:35  ram
-# patch1: moved to an array representation for the object
-# patch1: added ability to specify -max_time in other units than seconds
-# patch1: added is_same() to compare configurations
-#
-# Revision 0.1  2000/03/05 22:15:40  ram
-# Baseline for first alpha release.
 #
 ###########################################################################
 
@@ -57,9 +22,8 @@ use Getargs::Long qw(ignorecase);
 # File rotating policy
 #
 
-use vars qw($VERSION);
-
-$VERSION = sprintf "%d.%01d%02d%s", '$Name:  $' =~ /(p?\d+)/g;
+our $VERSION = "1.000";
+$VERSION = eval $VERSION;
 
 BEGIN {
     sub BACKLOG ()     {0}
@@ -240,6 +204,8 @@ sysopen() during file creation.  This value is modified during execution
 by the umask of the process.  In most cases, it is good practice to leave
 this set to the default and let the user process controll the file
 permissions.
+
+This option has no effect on Win32 systems.
 
 Defaults to 0666.
 

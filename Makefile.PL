@@ -1,29 +1,15 @@
-# $Id: Makefile.PL,v 1.1 2002/05/12 17:33:43 wendigo Exp $
+###########################################################################
 #
-#  Copyright (c) 2000, Raphael Manfredi
-#  
-#  You may redistribute only under the terms of the Artistic License,
-#  as specified in the README file that comes with the distribution.
+# Log::Agent::Rotate
 #
-# HISTORY
-# $Log: Makefile.PL,v $
-# Revision 1.1  2002/05/12 17:33:43  wendigo
-# Initial revision
+# Copyright (c) 2000 Raphael Manfredi.
+# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# all rights reserved.
 #
-# Revision 0.1.1.3  2001/04/11 15:58:55  ram
-# patch3: now depends on Getargs::Long
+# See the README file included with the
+# distribution for license information.
 #
-# Revision 0.1.1.2  2000/11/12 14:53:38  ram
-# patch2: changed pre-req on Log::Agent
-#
-# Revision 0.1.1.1  2000/11/06 19:57:50  ram
-# patch1: added build_pm_hash() to compute PM value from MANIFEST
-#
-# Revision 0.1  2000/03/05 22:15:40  ram
-# Baseline for first alpha release.
-#
-# $EndLog$
-#
+###########################################################################
 
 use ExtUtils::MakeMaker;
 use Log::Agent;
@@ -31,17 +17,27 @@ use Log::Agent;
 WriteMakefile(
     'NAME'	=> 'Log::Agent::Rotate',
     'VERSION_FROM' => 'Rotate.pm', # finds $VERSION
-	'PREREQ_PM' => {
-		'Compress::Zlib'   => '0.4',
-		'Getargs::Long'    => '0.103',
-		'LockFile::Simple' => '0.202',
-		'Log::Agent'       => '0.201',
+	'BUILD_REQUIRES' => {
+        'Test::More'        => '0',
+        'File::Copy'        => '0',
+		'Compress::Zlib'    => '0.4',
+		'Getargs::Long'     => '0.103',
+		'LockFile::Simple'  => '0.202',
+		'Log::Agent'        => '0.201',
 	},
+	'PREREQ_PM' => {
+		'Compress::Zlib'    => '0.4',
+		'Getargs::Long'     => '0.103',
+		'LockFile::Simple'  => '0.202',
+		'Log::Agent'        => '0.201',
+	},
+    clean => {
+        FILES => 't/*.out *~ File/*~ t/*~ t/logfile*',
+    },
 	'PM' => build_pm_hash(),
     'LIBS'	=> [''],		# e.g., '-lm' 
     'DEFINE'	=> '',		# e.g., '-DHAVE_SOMETHING' 
     'INC'	=> '',			# e.g., '-I/usr/include/other' 
-	# 'PREFIX' => '/home/ram/usr/lib/site_perl',
 );
 
 #
