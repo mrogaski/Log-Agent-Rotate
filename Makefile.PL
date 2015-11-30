@@ -3,7 +3,7 @@
 # Log::Agent::Rotate
 #
 # Copyright (c) 2000 Raphael Manfredi.
-# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# Copyright (c) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 # all rights reserved.
 #
 # See the README file included with the
@@ -12,7 +12,6 @@
 ###########################################################################
 
 use ExtUtils::MakeMaker;
-use Log::Agent;
 
 WriteMakefile(
     'NAME'	=> 'Log::Agent::Rotate',
@@ -35,9 +34,9 @@ WriteMakefile(
         FILES => 't/*.out *~ File/*~ t/*~ t/logfile*',
     },
 	'PM' => build_pm_hash(),
-    'LIBS'	=> [''],		# e.g., '-lm' 
-    'DEFINE'	=> '',		# e.g., '-DHAVE_SOMETHING' 
-    'INC'	=> '',			# e.g., '-I/usr/include/other' 
+    'LIBS'	=> [''],		# e.g., '-lm'
+    'DEFINE'	=> '',		# e.g., '-DHAVE_SOMETHING'
+    'INC'	=> '',			# e.g., '-I/usr/include/other'
 );
 
 #
@@ -52,7 +51,7 @@ WriteMakefile(
 #
 sub build_pm_hash {
 	local *MANI;
-	open(MANI, "MANIFEST") || logdie "can't open MANIFEST: $!";
+	open(MANI, "MANIFEST") || die "can't open MANIFEST: $!";
 	local $_;
 	my @pm;
 	while (<MANI>) {
@@ -63,4 +62,3 @@ sub build_pm_hash {
 	my %pm = map { $_ => '$(INST_LIBDIR)/' . $_ } @pm;
 	return \%pm;
 }
-

@@ -1,23 +1,16 @@
 #!./perl
-
+###########################################################################
 #
-# $Id: mixed.t,v 1.1 2002/05/12 17:33:43 wendigo Exp $
+# t/mixed.t
 #
-#  Copyright (c) 2000, Raphael Manfredi
-#  
-#  You may redistribute only under the terms of the Artistic License,
-#  as specified in the README file that comes with the distribution.
+# Copyright (c) 2000 Raphael Manfredi.
+# Copyright (c) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
+# all rights reserved.
 #
-# HISTORY
-# $Log: mixed.t,v $
-# Revision 1.1  2002/05/12 17:33:43  wendigo
-# Initial revision
+# See the README file included with the
+# distribution for license information.
 #
-# Revision 0.1  2000/03/05 22:15:41  ram
-# Baseline for first alpha release.
-#
-# $EndLog$
-#
+###########################################################################
 
 #
 # Check behaviour when mixed compressing policies are used in sequence
@@ -202,4 +195,3 @@ ok 49, !-e("t/logfile.1.gz");
 ok 50, !-e("t/logfile.0.gz");
 
 cleanlog;
-

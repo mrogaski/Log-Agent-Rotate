@@ -4,7 +4,7 @@
 # t/rename.t
 #
 # Copyright (c) 2000 Raphael Manfredi.
-# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# Copyright (c) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 # all rights reserved.
 #
 # See the README file included with the
@@ -75,4 +75,3 @@ SKIP: {
     cleanlog;
 
 }
-

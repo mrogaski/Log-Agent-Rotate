@@ -1,29 +1,16 @@
 #!./perl
-
+###########################################################################
 #
-# $Id: normal.t,v 1.1 2002/05/12 17:33:43 wendigo Exp $
+# t/normal.t
 #
-#  Copyright (c) 2000, Raphael Manfredi
-#  
-#  You may redistribute only under the terms of the Artistic License,
-#  as specified in the README file that comes with the distribution.
+# Copyright (c) 2000 Raphael Manfredi.
+# Copyright (c) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
+# all rights reserved.
 #
-# HISTORY
-# $Log: normal.t,v $
-# Revision 1.1  2002/05/12 17:33:43  wendigo
-# Initial revision
+# See the README file included with the
+# distribution for license information.
 #
-# Revision 0.1.1.2  2001/04/11 16:00:55  ram
-# patch3: ensure logfile rotation indication is left properly
-#
-# Revision 0.1.1.1  2000/11/12 14:54:26  ram
-# patch2: use new -single_host parameter
-#
-# Revision 0.1  2000/03/05 22:15:41  ram
-# Baseline for first alpha release.
-#
-# $EndLog$
-#
+###########################################################################
 
 #
 # Check normal behaviour, with 2 non-compressed files
@@ -110,4 +97,3 @@ ok 20, !-e("t/logfile.7.gz");
 ok 21, contains("t/logfile.0", "LOGFILE ROTATED ON");
 
 cleanlog;
-
