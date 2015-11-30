@@ -3,7 +3,7 @@
 # File/Rotate.pm
 #
 # Copyright (c) 2000 Raphael Manfredi.
-# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# Copyright (c) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 # all rights reserved.
 #
 # See the README file included with the
@@ -59,7 +59,7 @@ sub make {
     $self->{'fd'} = undef;
     $self->{'handle'} = gensym;
     $self->{'warned'} = {};
-    $self->{'rotating'} = 0; 
+    $self->{'rotating'} = 0;
     $self->{'lockmgr'} = LockFile::Simple->make(
         -autoclean => 1,
         -delay     => 1,        # until sleep(.25) is supported
@@ -567,4 +567,3 @@ currently maintained by Mark Rogaski E<lt>mrogaski@pobox.comE<gt>.
 Log::Agent::Rotate(3), Log::Agent::Driver::File(3).
 
 =cut
-

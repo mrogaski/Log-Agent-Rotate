@@ -4,7 +4,7 @@
 # t/badconf.t
 #
 # Copyright (c) 2000 Raphael Manfredi.
-# Copyright (c) 2002, 2013 Mark Rogaski, mrogaski@cpan.org;
+# Copyright (c) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 # all rights reserved.
 #
 # See the README file included with the
@@ -81,4 +81,3 @@ ok 5, -e("t/logfileB.0");
 ok 6, !contains("t/logfileB.0", "Rotation for 'error' may be wrong");
 
 cleanlog;
-
