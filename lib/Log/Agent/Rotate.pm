@@ -22,19 +22,19 @@ use Getargs::Long qw(ignorecase);
 # File rotating policy
 #
 
-our $VERSION = "1.001";
+our $VERSION = "1.200";
 $VERSION = eval $VERSION;
 
-BEGIN {
-    sub BACKLOG ()     {0}
-    sub UNZIPPED ()    {1}
-    sub MAX_SIZE ()    {2}
-    sub MAX_WRITE ()   {3}
-    sub MAX_TIME ()    {4}
-    sub IS_ALONE ()    {5}
-    sub SINGLE_HOST () {6}
-    sub FILE_PERM ()   {7}
-}
+use constant {
+    BACKLOG     => 0,
+    UNZIPPED    => 1,
+    MAX_SIZE    => 2,
+    MAX_WRITE   => 3,
+    MAX_TIME    => 4,
+    IS_ALONE    => 5,
+    SINGLE_HOST => 6,
+    FILE_PERM   => 7,
+};
 
 #
 # ->make
