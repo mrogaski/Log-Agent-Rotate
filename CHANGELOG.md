@@ -1,5 +1,12 @@
 # Change Log
 
+## Unreleased
+### Changed
+- Converted build script to Module::Build.
+
+### Fixed
+- Metadata files will now be generated dynamically.
+
 ## [1.001] - 2015-11-30
 ### Changed
 - Moved change log from changes.pod to CHANGELOG.md.
