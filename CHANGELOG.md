@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.200] - 2015-12-01
+### Changed
+- Converted build script to Module::Build.
+- Refactored to use the constant pragma.
+
+### Fixed
+- Metadata files will now be generated dynamically.
+
 ## [1.001] - 2015-11-30
 ### Changed
 - Moved change log from changes.pod to CHANGELOG.md.
@@ -56,6 +64,7 @@
 ## 0.100 - 2000-05-05
 Initial revision.
 
+[1.001]: https://github.com/mrogaski/Log-Agent-Rotate/compare/v1.001...v1.200
 [1.001]: https://github.com/mrogaski/Log-Agent-Rotate/compare/v1.000...v1.001
 [1.000]: https://github.com/mrogaski/Log-Agent-Rotate/compare/rel0_1_4...v1.000
 [0.104]: https://github.com/mrogaski/Log-Agent-Rotate/compare/rel0_1_3...rel0_1_4

@@ -1,7 +1,7 @@
-                        Log::Agent::Rotate 1.000
+                        Log::Agent::Rotate 1.200
 
                  Copyright (c) 2000, Raphael Manfredi
-                 Copyright (c) 2002-2015 Mark Rogaski,
+                 Copyright (c) 2002-2015 Mark Rogaski;
                  mrogaski@cpan.org; all rights reserved.
 
 ------------------------------------------------------------------------

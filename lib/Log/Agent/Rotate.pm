@@ -22,19 +22,19 @@ use Getargs::Long qw(ignorecase);
 # File rotating policy
 #
 
-our $VERSION = "1.001";
+our $VERSION = "1.200";
 $VERSION = eval $VERSION;
 
-BEGIN {
-    sub BACKLOG ()     {0}
-    sub UNZIPPED ()    {1}
-    sub MAX_SIZE ()    {2}
-    sub MAX_WRITE ()   {3}
-    sub MAX_TIME ()    {4}
-    sub IS_ALONE ()    {5}
-    sub SINGLE_HOST () {6}
-    sub FILE_PERM ()   {7}
-}
+use constant {
+    BACKLOG     => 0,
+    UNZIPPED    => 1,
+    MAX_SIZE    => 2,
+    MAX_WRITE   => 3,
+    MAX_TIME    => 4,
+    IS_ALONE    => 5,
+    SINGLE_HOST => 6,
+    FILE_PERM   => 7,
+};
 
 #
 # ->make
@@ -296,10 +296,27 @@ would get the configured I<max_write> threshold.
 
 =head1 AUTHORS
 
-Originally written by Raphael Manfredi E<lt>Raphael_Manfredi@pobox.comE<gt>,
-currently maintained by Mark Rogaski E<lt>mrogaski@cpan.orgE<gt>.
+Originally written by Raphael Manfredi (Raphael_Manfredi@pobox.com),
+currently maintained by Mark Rogaski (mrogaski@cpan.org).
 
 Thanks to Chris Meshkin for his suggestions on file permissions.
+
+=head1 COPYRIGHT
+
+Copyright (c) 2000, Raphael Manfredi.
+
+Copyright (c) 2002-2015, Mark Rogaski; all rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the Artistic License 2.0, a copy of which can
+be found with perl.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+Artistic License 2.0 for more details.
+
+http://www.perlfoundation.org/artistic_license_2_0
 
 =head1 SEE ALSO
 
