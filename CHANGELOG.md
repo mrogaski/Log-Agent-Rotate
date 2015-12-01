@@ -1,5 +1,9 @@
 # Change Log
 
+## Unreleased
+### Changed
+- Converted build script to Module::Build.
+
 ## [1.001] - 2015-11-30
 ### Changed
 - Moved change log from changes.pod to CHANGELOG.md.
