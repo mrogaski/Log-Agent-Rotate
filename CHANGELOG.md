@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.201] - 2021-04-11
+### Changed
+- Added Github Actions as a CI/CD pipeline.
+
 ## [1.200] - 2015-12-01
 ### Changed
 - Converted build script to Module::Build.
