@@ -22,7 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Configure
-        run: perl Build.PL
+        run: |
+          cpanm --quiet --notest --skip-satisfied Module::Build
+          perl Build.PL
       - name: Build
         run: Build
       - name: Test
@@ -48,8 +50,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Configure
-        run: perl Build.PL
+        run: |
+          cpanm --quiet --notest --skip-satisfied Module::Build
+          perl Build.PL
       - name: Build
         run: Build dist
       - name: Upload to CPAN
