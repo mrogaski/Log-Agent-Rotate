@@ -68,6 +68,7 @@
 ## 0.100 - 2000-05-05
 Initial revision.
 
+[1.201]: https://github.com/mrogaski/Log-Agent-Rotate/compare/v1.200...v1.201
 [1.200]: https://github.com/mrogaski/Log-Agent-Rotate/compare/v1.001...v1.200
 [1.001]: https://github.com/mrogaski/Log-Agent-Rotate/compare/v1.000...v1.001
 [1.000]: https://github.com/mrogaski/Log-Agent-Rotate/compare/rel0_1_4...v1.000
