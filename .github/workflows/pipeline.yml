@@ -26,9 +26,9 @@ jobs:
           cpanm --quiet --notest --skip-satisfied Module::Build
           perl Build.PL
       - name: Build
-        run: Build
+        run: perl Build
       - name: Test
-        run: Build test
+        run: perl Build test
       - name: Report coverage
         continue-on-error: true
         run: |
@@ -55,7 +55,7 @@ jobs:
           cpanm --quiet --notest --skip-satisfied Module::Build
           perl Build.PL
       - name: Build
-        run: Build dist
+        run: perl Build dist
       - name: Upload to CPAN
         id: upload
         uses: thibaultduponchelle/action-upload-to-cpan@master
