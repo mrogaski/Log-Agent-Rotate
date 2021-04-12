@@ -11,3 +11,6 @@ t/mixed.t
 t/normal.t
 t/perm.t
 t/rename.t
+Makefile.PL
+META.yml
+META.json
