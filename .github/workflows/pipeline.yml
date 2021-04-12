@@ -24,6 +24,7 @@ jobs:
       - name: Configure
         run: |
           cpanm --quiet --notest --skip-satisfied Module::Build
+          cpanm --quiet --installdeps --notest .
           perl Build.PL
       - name: Build
         run: perl Build
@@ -53,6 +54,7 @@ jobs:
       - name: Configure
         run: |
           cpanm --quiet --notest --skip-satisfied Module::Build
+          cpanm --quiet --installdeps --notest .
           perl Build.PL
       - name: Build
         run: perl Build dist
